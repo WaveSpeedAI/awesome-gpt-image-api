@@ -1,15 +1,15 @@
 # Awesome GPT Image API 🎨 — Prompts, Variants & One-Call Image Generation
 
-> The most complete open guide to **OpenAI GPT Image — the multimodal image model (GPT Image 1.5 & 2, text-to-image + edit)** — a community prompt library and a single API to run every variant.
+> The most complete open guide to **OpenAI GPT Image — the multimodal image model (GPT Image 2.6 · 2.5 · 2 · 1.5, text-to-image + edit)** — a community prompt library and a single API to run every variant.
 
 <p align="center">
-  <a href="https://wavespeed.ai/gpt-image-2-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api"><img src="https://img.shields.io/badge/▶_Run_GPT_Image_2-Get_API_Key-00E5FF?style=for-the-badge&labelColor=0B0B0F" alt="Run GPT Image 2"></a>
-  <a href="https://wavespeed.ai/gpt-image-2-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api"><img src="https://img.shields.io/badge/GPT_Image_2-Try_Now-7C3AED?style=for-the-badge&labelColor=0B0B0F" alt="GPT Image 2"></a>
+  <a href="https://wavespeed.ai/gpt-image-2-6-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api"><img src="https://img.shields.io/badge/▶_Run_GPT_Image_2.6-Get_API_Key-00E5FF?style=for-the-badge&labelColor=0B0B0F" alt="Run GPT Image 2.6"></a>
+  <a href="https://wavespeed.ai/gpt-image-2-5-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api"><img src="https://img.shields.io/badge/GPT_Image_2.5-Try_Now-7C3AED?style=for-the-badge&labelColor=0B0B0F" alt="GPT Image 2.5"></a>
 </p>
 
 <p align="center">
   <b>🌊 Powered by <a href="https://wavespeed.ai?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api">WaveSpeedAI</a> — serverless GPT Image API, pay-as-you-go, zero cold starts.</b><br>
-  <a href="https://wavespeed.ai/gpt-image-2-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api"><b>→ Get a GPT Image 2 API key</b></a> &nbsp;·&nbsp; <a href="https://wavespeed.ai/gpt-image-2-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api"><b>→ Try GPT Image 2</b></a>
+  <a href="https://wavespeed.ai/gpt-image-2-6-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api"><b>→ Get a GPT Image 2.6 API key</b></a> &nbsp;·&nbsp; <a href="https://wavespeed.ai/gpt-image-2-5-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api"><b>→ Try GPT Image 2.5</b></a>
 </p>
 
 <p align="center">
@@ -21,7 +21,7 @@
 > **Generate right now**
 > ```bash
 > npm i -g @wavespeed/cli && wavespeed login
-> wavespeed run openai/gpt-image-2/text-to-image -p "your prompt"
+> wavespeed run openai/gpt-image-2.6-flare/text-to-image -p "your prompt"
 > ```
 > No GPU, no cold start — the same endpoint powers every prompt below.
 
@@ -39,7 +39,7 @@
 
 ## What is GPT Image?
 
-**GPT Image** is OpenAI's multimodal image generation and editing model, strong on prompt comprehension, in-image text, and reference-guided edits. WaveSpeed serves **GPT Image 2** and 1.5 — text-to-image and edit.
+**GPT Image** is OpenAI's multimodal image generation and editing model, strong on prompt comprehension, in-image text, and reference-guided edits. WaveSpeedAI serves **GPT Image 2.6** in two tiers — Flare for fast everyday generation and Sunburst for higher fidelity — plus GPT Image 2.5, 2 and 1.5, each with text-to-image and edit.
 
 ---
 
@@ -48,9 +48,9 @@
 One endpoint, submit + poll. Swap the model path for any variant below.
 
 ```bash
-curl -s -X POST "https://api.wavespeed.ai/api/v3/openai/gpt-image-2/text-to-image" \
+curl -s -X POST "https://api.wavespeed.ai/api/v3/openai/gpt-image-2.6-flare/text-to-image" \
   -H "Authorization: Bearer $WAVESPEED_API_KEY" -H "Content-Type: application/json" \
-  -d '{"prompt": "A vintage travel poster of Mars colony, bold typography, retro-futurism"}'
+  -d '{"prompt": "A vintage travel poster of Mars colony, bold typography, retro-futurism", "aspect_ratio": "16:9"}'
 # → {"data": {"id": "<prediction_id>"}}
 
 curl -s "https://api.wavespeed.ai/api/v3/predictions/<prediction_id>/result" \
@@ -58,7 +58,7 @@ curl -s "https://api.wavespeed.ai/api/v3/predictions/<prediction_id>/result" \
 # → status: completed → outputs: ["<url>"]
 ```
 
-**[→ Get your GPT Image 2 API key](https://wavespeed.ai/gpt-image-2-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)** · pay-as-you-go, live pricing on each model page.
+**[→ Get your GPT Image 2.6 API key](https://wavespeed.ai/gpt-image-2-6-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)** · pay-as-you-go, live pricing on each model page.
 
 **Python wrapper:** [gpt-image-2.6-api](https://github.com/WaveSpeedAI/gpt-image-2.6-api) — one typed function per GPT Image 2.6 endpoint, built on the official SDK.
 
@@ -68,13 +68,19 @@ curl -s "https://api.wavespeed.ai/api/v3/predictions/<prediction_id>/result" \
 
 All variants open in-browser with a copy-paste API snippet.
 
-### GPT Image 2 — flagship &nbsp;[▶ API](https://wavespeed.ai/gpt-image-2-api)
-[text-to-image](https://wavespeed.ai/models/openai/gpt-image-2/text-to-image) · [edit](https://wavespeed.ai/models/openai/gpt-image-2/edit)
+### GPT Image 2.6 — flagship &nbsp;[▶ API](https://wavespeed.ai/gpt-image-2-6-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)
+[flare text-to-image](https://wavespeed.ai/models/openai/gpt-image-2.6-flare/text-to-image?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api) · [flare edit](https://wavespeed.ai/models/openai/gpt-image-2.6-flare/edit?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api) · [sunburst text-to-image](https://wavespeed.ai/models/openai/gpt-image-2.6-sunburst/text-to-image?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api) · [sunburst edit](https://wavespeed.ai/models/openai/gpt-image-2.6-sunburst/edit?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)
+
+### GPT Image 2.5 &nbsp;[▶ API](https://wavespeed.ai/gpt-image-2-5-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)
+[flare text-to-image](https://wavespeed.ai/models/openai/gpt-image-2.5-flare/text-to-image?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api) · [flare edit](https://wavespeed.ai/models/openai/gpt-image-2.5-flare/edit?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api) · [sunburst text-to-image](https://wavespeed.ai/models/openai/gpt-image-2.5-sunburst/text-to-image?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api) · [sunburst edit](https://wavespeed.ai/models/openai/gpt-image-2.5-sunburst/edit?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)
+
+### GPT Image 2 &nbsp;[▶ API](https://wavespeed.ai/gpt-image-2-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)
+[text-to-image](https://wavespeed.ai/models/openai/gpt-image-2/text-to-image?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api) · [edit](https://wavespeed.ai/models/openai/gpt-image-2/edit?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)
 
 ### GPT Image 1.5
-[text-to-image](https://wavespeed.ai/models/openai/gpt-image-1.5/text-to-image) · [edit](https://wavespeed.ai/models/openai/gpt-image-1.5/edit)
+[text-to-image](https://wavespeed.ai/models/openai/gpt-image-1.5/text-to-image?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api) · [edit](https://wavespeed.ai/models/openai/gpt-image-1.5/edit?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)
 
-> Full catalog: **[wavespeed.ai/gpt-image-2-api](https://wavespeed.ai/gpt-image-2-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)**
+> Full catalog: **[wavespeed.ai/gpt-image-2-6-api](https://wavespeed.ai/gpt-image-2-6-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)**
 
 ---
 
