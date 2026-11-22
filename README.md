@@ -60,6 +60,8 @@ curl -s "https://api.wavespeed.ai/api/v3/predictions/<prediction_id>/result" \
 
 **[→ Get your GPT Image 2 API key](https://wavespeed.ai/gpt-image-2-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-gpt-image-api)** · pay-as-you-go, live pricing on each model page.
 
+**Python wrapper:** [gpt-image-2.6-api](https://github.com/WaveSpeedAI/gpt-image-2.6-api) — one typed function per GPT Image 2.6 endpoint, built on the official SDK.
+
 ---
 
 ## Model Variants
